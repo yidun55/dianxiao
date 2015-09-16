@@ -49,7 +49,7 @@ object DRandomForest extends App{
     var data_0827 = sc.textFile("/data/mllib/skb_test_0827").filter{
         line =>
         val fields = line.split("\001")
-        fields(fields.length-2).toDouble == 1
+        fields(fields.length-2).toDouble == 1   //filter out those who didn't answer the call
     }.map{
         line =>
         val fields = line.split("\001")
